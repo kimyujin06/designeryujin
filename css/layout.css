@@ -1,0 +1,470 @@
+@charset "utf-8";
+/* 초기화 파일 연결 */
+@import url("./reset.css");
+/* 폰트 연결 */
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plaster&display=swap");
+
+:root {
+  --maincolor: #50c878;
+  --subcolor: #fff263;
+}
+
+/* 드래그 했을 때 색상 변경 */
+::selection {
+  background-color: var(--maincolor);
+  color: var(--subcolor);
+}
+
+/* 스크롤 모양 변경 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 움직이는 스크롤바 */
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-image: linear-gradient(-225deg, var(--maincolor) 0%, #000 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--maincolor);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  color: #fff;
+  background-color: #000;
+}
+
+#container {
+  width: 100%;
+  height: auto;
+}
+
+/* 헤더 */
+header {
+  width: 100%;
+  height: 90px;
+  box-sizing: border-box;
+  padding: 0px 40px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 999;
+}
+
+/* 로고 */
+h1 {
+  font-family: "Plaster", system-ui;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 90px;
+}
+
+/* 메뉴 */
+header nav {
+  width: fit-content;
+  height: fit-content;
+}
+
+header nav > ul {
+  width: 100%;
+  height: 100%;
+}
+
+/* 1차 메뉴 */
+nav > ul > li {
+  line-height: 90px;
+  text-align: right;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+nav > ul > li > a {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+nav > ul > li::after {
+  content: "line";
+  font-size: 0px;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: 65px;
+  right: 3px;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+nav > ul > li:hover a {
+  opacity: 1;
+}
+
+nav > ul > li:hover::after {
+  opacity: 1;
+}
+
+/* 서브메뉴(2차메뉴) */
+.submenu {
+  position: absolute;
+  right: 0px;
+  width: 200px;
+  line-height: 50px;
+  font-weight: 300;
+  text-transform: capitalize;
+  transition: 0.3s;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  -moz-backdrop-filter: blur(30px);
+  -o-backdrop-filter: blur(30px);
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 0px;
+  overflow: hidden;
+}
+
+nav > ul > li:hover > .submenu {
+  height: 160px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.submenu > li > a {
+  color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+}
+
+.submenu > li:hover > a {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 700;
+}
+
+/* 컨텐츠 영역 */
+main {
+  width: 100%;
+  height: auto;
+}
+
+/* 섹션 공통 속성 */
+section {
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  box-sizing: border-box;
+}
+
+/* 메인비주얼 */
+.visual {
+  height: 100vh;
+  background-color: var(--maincolor);
+  overflow: hidden;
+}
+
+.visual_title {
+  font-family: "Alumni Sans", serif;
+  font-size: 12vw;
+  font-style: italic;
+  font-weight: 700;
+  width: 80vw;
+  height: 100%;
+  margin: 0px auto;
+  position: relative;
+  z-index: 50;
+}
+
+.visual_title h2 {
+  position: absolute;
+  line-height: 1;
+  /* 텍스트 그림자 효과 */
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.visual_title .v_title1 {
+  top: 40%;
+  margin-top: -10vw;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.visual_title .v_title2 {
+  top: 50%;
+  margin-top: -10vw;
+  right: 0px;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.visual_title .v_title3 {
+  bottom: 10vw;
+  width: 100%;
+  text-align: center;
+  margin-top: -10vw;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* 메인비주얼 이미지 */
+.back_shape {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  top: -100vh;
+  left: 0px;
+}
+
+.back_shape > div:not(.shape_1, .shape_18) {
+  position: absolute;
+  width: 23.5vw;
+  height: fit-content;
+  /* 애니메이션 최적화 */
+  will-change: transform, opacity;
+}
+
+.back_shape > div > img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.shape_1 {
+  position: absolute;
+  width: 70vw;
+  top: -28vh;
+  left: 23vw;
+}
+
+.shape_2 {
+  top: -12vh;
+  right: 5vw;
+}
+
+.shape_3 {
+  bottom: -3vh;
+  left: 12vw;
+}
+
+.shape_4 {
+  bottom: 15vh;
+  right: -12vw;
+}
+
+/* 박스에 transform 처리를 하면 이미지가 회전하며 나타나기 때문에 새로 생성 */
+.shape_4 > img {
+  transform: rotate(-40deg);
+}
+
+.shape_5 {
+  top: -18vh;
+  left: 14vw;
+}
+
+.shape_6 {
+  top: 0px;
+  left: 0px;
+}
+
+.shape_7 {
+  top: 28vh;
+  left: 14vw;
+}
+
+.shape_8 {
+  top: 11vh;
+  right: -8vw;
+}
+
+.shape_9 {
+  bottom: -6vh;
+  left: -5vw;
+}
+
+.shape_10 {
+  bottom: -8vh;
+  right: -2vw;
+}
+
+.shape_11 {
+  bottom: -16vh;
+  right: 20vw;
+}
+
+.shape_11 > img {
+  transform: rotate(159deg);
+}
+
+.shape_12 {
+  top: 32vh;
+  left: -6vw;
+}
+
+.shape_12 > img {
+  transform: rotate(-21deg);
+}
+
+/* 반짝 효과 shape */
+.back_shape > div.shape_13,
+.back_shape > div.shape_14,
+.back_shape > div.shape_15,
+.back_shape > div.shape_16,
+.back_shape > div.shape_17 {
+  width: 3vw;
+}
+
+.shape_13 {
+  top: 19vh;
+  left: 29vw;
+  opacity: 0;
+  animation: twink 3s linear 0s infinite forwards;
+}
+
+.shape_14 {
+  top: 5vh;
+  left: 45vw;
+  opacity: 0;
+  animation: twink 3s linear 0.3s infinite forwards;
+}
+
+/* 움직임 없음, 로고 영역 요소 */
+.shape_15 {
+  top: 17px;
+  left: 17px;
+}
+
+.shape_16 {
+  bottom: 32vh;
+  left: 14vw;
+  opacity: 0;
+  animation: twink 3s linear 0.6s infinite forwards;
+}
+
+.shape_17 {
+  bottom: 13vh;
+  right: 38vw;
+  opacity: 0;
+  animation: twink 3s linear 0.9s infinite forwards;
+}
+
+/* 화면 중앙 나뭇잎 이미지 요소 */
+.shape_18 {
+  width: 30vw;
+  height: 0px;
+  position: absolute;
+  /* 중앙으로 이동 */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  overflow: hidden;
+  animation: leaf 0.5s linear 2.8s 1 forwards;
+}
+
+.shape_18 > img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+/* 반짝이는 효과 애니메이션 */
+@keyframes twink {
+  0% {
+    transform: scale(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    transform: scale(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1, 1) rotate(180deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0, 0) rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* 중앙의 나뭇잎 효과 애니메이션 */
+@keyframes leaf {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 537px;
+  }
+}
+
+/* 2번 - 컨텐츠 영역 */
+.container {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.container > section {
+  width: 1600px;
+  margin: 0px auto;
+}
+
+/* 블러배너 */
+.blur_banner {
+  height: fit-content;
+  position: relative;
+  top: -100px;
+  padding: 90px 135px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  -moz-backdrop-filter: blur(30px);
+  -o-backdrop-filter: blur(30px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.5s;
+}
+
+.blur_banner h2 {
+  font-size: 70px;
+  font-weight: 700;
+  flex: 1 1 0;
+}
+
+.blur_banner h2::before {
+  content: "line";
+  font-size: 0;
+  display: block;
+  width: 60px;
+  height: 8px;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+
+.blur_banner p {
+  font-size: 25px;
+  flex: 1 1 0;
+  line-height: 1.7;
+  font-weight: 200;
+}
+
+.blur_banner:hover {
+  transform: translateY(-10px);
+}
