@@ -750,13 +750,13 @@ section {
   font-weight: 500;
 }
 .thumbs a > div.shape > div {
-  background-color: var(--sub-color);
+  background-color: var(--subcolor);
 }
 .thumbs a > div.assets > div {
   background-color: #222;
 }
 .thumbs a > div.elegant > div {
-  background-color: var(--main-color);
+  background-color: var(--maincolor);
 }
 .thumbs a > div.elegant img {
   transform: translateX(-10px) rotate(-10deg);
