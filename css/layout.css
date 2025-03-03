@@ -595,8 +595,8 @@ section {
   padding: 16px 30px;
 }
 .motion_con .box .text_box a:hover {
-  background-color: var(--main-color);
-  color: var(--sub-color);
+  background-color: var(--maincolor);
+  color: var(--subcolor);
 }
 .motion_con .box .on {
   display: none;
@@ -750,13 +750,13 @@ section {
   font-weight: 500;
 }
 .thumbs a > div.shape > div {
-  background-color: var(--sub-color);
+  background-color: var(--subcolor);
 }
 .thumbs a > div.assets > div {
   background-color: #222;
 }
 .thumbs a > div.elegant > div {
-  background-color: var(--main-color);
+  background-color: var(--maincolor);
 }
 .thumbs a > div.elegant img {
   transform: translateX(-10px) rotate(-10deg);
@@ -876,9 +876,9 @@ section {
   cursor: pointer;
 }
 .more:hover {
-  background-color: var(--main-color);
-  border: var(--main-color);
-  color: var(--sub-color);
+  background-color: var(--maincolor);
+  border: var(--maincolor);
+  color: var(--subcolor);
   font-weight: 800;
 }
 /* footer */
@@ -926,6 +926,6 @@ footer .sns_icons {
 }
 .sns_icons a:hover {
   opacity: 1;
-  background-color: var(--main-color);
+  background-color: var(--maincolor);
   border-radius: 10px;
 }
